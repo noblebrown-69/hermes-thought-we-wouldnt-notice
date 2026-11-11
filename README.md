@@ -1,6 +1,13 @@
-# Thought We Wouldn't Notice
+<p align="center">
+  <img src="assets/catalog.jpg" alt="Thought We Wouldn't Notice..." width="100%">
+</p>
 
-Insert a quarter, get a tiny original space-bug shooter, and a wry "thought we wouldn't notice" line.
+<h1 align="center">Thought We Wouldn't Notice...</h1>
+
+<p align="center">
+  Insert a quarter, get a tiny original space-bug shooter,<br>
+  and a wry "thought we wouldn't notice" line.
+</p>
 
 Version 0.1.7. A short Hermes Agent plugin: if a chat message is only a quarter, Hermes does not ask the model what to do with it. Hermes Desktop opens Top Sails over the window. The web dashboard grows the same cabinet if that page is open.
 
@@ -8,10 +15,10 @@ The in-game title is **Top Sails**. Bugs, ship, and tones are original geometry 
 
 ## Install
 
-From a public git URL, once this tree is published:
+From the public git URL:
 
 ```bash
-hermes plugins install <public-https-url-of-this-repo> --enable
+hermes plugins install https://github.com/noblebrown-69/hermes-thought-we-wouldnt-notice --enable
 ```
 
 From a local checkout:
