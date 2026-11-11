@@ -1,0 +1,16 @@
+name: thought-we-wouldnt-notice
+version: 0.1.7
+description: >-
+  Insert a quarter, get a tiny original space-bug shooter, and a wry
+  "thought we wouldn't notice" line.
+manifest_version: 2
+api_version: 1
+license: MIT
+tags:
+  - dashboard
+  - hackathon
+python_dependencies: []
+platforms: []
+provides_tools: []
+provides_hooks:
+  - pre_llm_call

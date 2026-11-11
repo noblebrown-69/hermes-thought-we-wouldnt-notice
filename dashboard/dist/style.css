@@ -1,0 +1,351 @@
+/* Late-night cabinet. Self-contained; no remote fonts or images. */
+
+.twwwn-preview {
+  margin: 0;
+  background: #120910;
+}
+
+.twwwn-page {
+  min-height: 70vh;
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) minmax(280px, 440px);
+  gap: 28px 36px;
+  align-items: start;
+  justify-content: center;
+  padding: 28px 16px 40px;
+  color: #f6e7c1;
+  font-family: "Courier New", Courier, ui-monospace, monospace;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 90, 140, 0.18), transparent 46%),
+    #120910;
+}
+
+.twwwn-host {
+  width: min(420px, 100%);
+}
+
+.twwwn-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  overflow: hidden;
+  background: rgba(8, 4, 12, 0.78);
+}
+
+.twwwn-popup-card {
+  width: min(420px, 100%);
+  margin: auto;
+}
+
+/* Padding and border count inside the cabinet width, so scale math stays honest. */
+.twwwn-cabinet,
+.twwwn-bezel,
+.twwwn-host,
+.twwwn-popup-card,
+.twwwn-fit-inner,
+.twwwn-fit-slot {
+  box-sizing: border-box;
+}
+
+.twwwn-cabinet {
+  width: min(420px, 100%);
+  margin: 0 auto;
+  color: #f6e7c1;
+  font-family: "Courier New", Courier, ui-monospace, monospace;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.06), transparent 36%),
+    linear-gradient(180deg, #6d3d24 0%, #3c2218 42%, #24140e 100%);
+  border: 3px solid #140c08;
+  border-radius: 18px;
+  padding: 12px 12px 14px;
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.48),
+    inset 0 0 0 2px #8b5a34;
+  outline: none;
+}
+
+.twwwn-cabinet:focus {
+  box-shadow:
+    0 0 0 3px #ffd36a,
+    0 22px 50px rgba(0, 0, 0, 0.48),
+    inset 0 0 0 2px #8b5a34;
+}
+
+.twwwn-marquee {
+  margin-bottom: 10px;
+  padding: 9px 8px;
+  text-align: center;
+  background: linear-gradient(180deg, #4a1424, #1a0a12);
+  border-radius: 10px;
+  border: 2px solid #2a1018;
+  box-shadow: inset 0 0 16px rgba(255, 180, 60, 0.18);
+}
+
+.twwwn-marquee-text {
+  display: inline-block;
+  color: #ffd36a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-shadow: 0 0 8px #ffb703;
+  animation: twwwn-glow 1.7s ease-in-out infinite;
+}
+
+@keyframes twwwn-glow {
+  0%,
+  100% { opacity: 1; }
+  50% { opacity: 0.68; }
+}
+
+.twwwn-bezel {
+  position: relative;
+  overflow: hidden;
+  background: #07060f;
+  border: 4px solid #120c10;
+  border-radius: 8px;
+  box-shadow: inset 0 0 28px rgba(0, 0, 0, 0.72);
+}
+
+.twwwn-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #07060f;
+  image-rendering: pixelated;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.twwwn-scan {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.045) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+}
+
+.twwwn-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.twwwn-readout {
+  color: #ffe7a3;
+}
+
+.twwwn-btn,
+.twwwn-pad,
+.twwwn-coin {
+  min-height: 44px;
+  padding: 8px 10px;
+  color: #ffd36a;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  background: #1a0f16;
+  border: 2px solid #ffd36a;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.twwwn-btn:hover,
+.twwwn-pad:hover,
+.twwwn-coin:hover,
+.twwwn-btn:focus-visible,
+.twwwn-pad:focus-visible,
+.twwwn-coin:focus-visible {
+  background: #2a1722;
+  outline: none;
+}
+
+.twwwn-controls {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.twwwn-pad {
+  font-size: 13px;
+}
+
+.twwwn-coin {
+  width: 100%;
+  margin-top: 10px;
+  background:
+    linear-gradient(180deg, #3a2418, #1a0f16);
+}
+
+.twwwn-hint {
+  margin: 8px 0 0;
+  color: #e6c99a;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.twwwn-story {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.twwwn-hero {
+  margin: 0;
+}
+
+.twwwn-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 3px solid #1a0d08;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.twwwn-hero-fallback {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  min-height: 220px;
+  padding: 24px 16px;
+  text-align: center;
+  border-radius: 14px;
+  border: 3px solid #1a0d08;
+  background:
+    linear-gradient(180deg, #6d3d24 0%, #24140e 38%, #07060f 39%, #07060f 100%);
+}
+
+.twwwn-hero-fallback[hidden],
+.twwwn-hero-img[hidden] {
+  display: none;
+}
+
+.twwwn-hero-sign {
+  color: #ffd36a;
+  font-size: 28px;
+  letter-spacing: 0.14em;
+  text-shadow: 0 0 12px #ffb703;
+}
+
+.twwwn-hero-caption {
+  margin: 0;
+  max-width: 28ch;
+  color: #e6c99a;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.twwwn-kicker {
+  margin: 4px 0 0;
+  color: #9ad7ff;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.twwwn-title {
+  margin: 0;
+  color: #ffe7a3;
+  font-size: 40px;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+}
+
+.twwwn-copy {
+  margin: 0;
+  color: #f6e7c1;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.twwwn-play {
+  align-self: start;
+  min-height: 48px;
+  margin-top: 4px;
+  padding: 12px 18px;
+  color: #1a0f16;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: #ffd36a;
+  border: 2px solid #ffe7a3;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.twwwn-play:hover,
+.twwwn-play:focus-visible {
+  background: #ffe7a3;
+  outline: none;
+}
+
+@media (max-width: 860px) {
+  .twwwn-page {
+    grid-template-columns: minmax(0, 440px);
+  }
+}
+
+@media (max-width: 520px) {
+  .twwwn-marquee-text {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+
+  .twwwn-hint {
+    font-size: 10px;
+  }
+}
+
+/* Popup / Desktop frame: fill the window and scale the cabinet to fit. */
+html, body.twwwn-preview {
+  margin: 0;
+  height: 100%;
+  background: #120910;
+}
+
+#twwwn-standalone[data-popup="1"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.twwwn-fit-slot {
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.twwwn-fit-inner {
+  width: 420px;
+  transform-origin: top left;
+}
+
+.twwwn-fit-inner .twwwn-cabinet {
+  width: 100%;
+}

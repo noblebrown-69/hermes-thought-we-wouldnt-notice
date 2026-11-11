@@ -1,0 +1,15 @@
+{
+  "name": "thought-we-wouldnt-notice",
+  "label": "Thought We Wouldn't Notice",
+  "description": "Insert a quarter, get a tiny original space-bug shooter, and a wry \"thought we wouldn't notice\" line.",
+  "icon": "Zap",
+  "version": "0.1.7",
+  "tab": {
+    "path": "/thought-we-wouldnt-notice",
+    "position": "end"
+  },
+  "slots": ["overlay"],
+  "entry": "dist/index.js",
+  "css": "dist/style.css",
+  "api": "plugin_api.py"
+}
